@@ -14,7 +14,8 @@
 body{
     background-color: var(--theme-text);
     font-family: 'Inter';
- overflow-x: hidden;
+    overflow-x: hidden;
+    z-index: 0;
 }
 
 .container{
@@ -122,8 +123,9 @@ ul{
 .mt-1{
   margin-top: 16px;
 }
-
-
+.mt-4{
+    margin-top: 64px;
+}
 .ms-1{
   margin-left: 16px;
 }
@@ -143,16 +145,19 @@ ul{
   margin-right: 32px;
 }
 .mb-3{
-    margin-bottom: 48px;
+    margin-bottom: 64px;
+}
+.mb-4{
+    margin-bottom: 128;
 }
 .mt-3{
   margin-top: 64px;
 }
 .ms-3{
-  margin-left: 48px;
+  margin-left: 64px;
 }
 .me-3{
-  margin-right: 48px;
+  margin-right: 64px;
 }
 .py-1{
     padding: 16px 0;
@@ -165,11 +170,11 @@ ul{
     font-size: 14px;
 }
 .btn{
-    max-width: 170px;
+    max-width: 160px;
     display: inline-flex;
     justify-content: center;
     background-color: var(--theme-yellow);
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 12px 1.7em;
     font-size: 16px;
     font-weight: 500;
@@ -179,7 +184,6 @@ ul{
     transition: all 0.3s ease-in-out;
 }
 .btn:hover{
-    max-width: 170px;
     -webkit-box-shadow: 0px 5px 10px 0px #fec64448;
     box-shadow: 0px 5px 10px 0px #fec64448;
     border: none;
@@ -189,22 +193,26 @@ ul{
 .heading{
     left: 50%;
     transform: translate(-50% , -50%);
-    margin-top: 100px;
-    height: 200px;
+    margin: 100px 0;
+
+    
 }
 
 .heading h2{
     font-size: 90px;
     color: #151b2980;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
    
    }
 .heading h4{
        font-size: 24px;
        color: var(--theme-yellow);
        font-weight: 500;
-       top: 30%;
        left: 50%;
-       transform: translate(-50%,-50%);
+       transform: translate(-50%,-130%);
        z-index: 1;
 }
 .heading h4::before{
@@ -215,7 +223,7 @@ ul{
     height: 2px;
     bottom: -16px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
+
     transform: translateX(-50%);
 }
 .heading h4::after{
@@ -226,7 +234,7 @@ ul{
     height: 2px;
     bottom: -16px;
     left: 50%;
-    -webkit-transform: translateX(-50%);
+    
     transform: translateX(-50%);
 }
    
@@ -238,7 +246,7 @@ header{
     background-color: var(--theme-black);
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 999;
     width: 100%;
     height: 80px;
 
@@ -268,12 +276,19 @@ header ul li:last-child a::before{
 
 /* Hero section start */
 .hero {
+  width: 100%;
   height: 850px;
-   width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../image/hero-bg.jpg);
 }
 .hero .heros-content{
-    height: 750px;
+   height: 700px;
 }
+.hero .heros-contact{
+    height: 200px;
+   
+ }
   .hero .heros-content h3{
    color: var(--theme-yellow);
    font-size: 30px;
@@ -295,7 +310,7 @@ header ul li:last-child a::before{
     font-weight: 300;
     margin: 25px 0;
   }
-  .hero .heros-content a{
+  .hero .heros-contact a{
     background-color: var(--theme-yellow);
     color: #070E1B;
     width: 170px;
@@ -311,26 +326,30 @@ header ul li:last-child a::before{
     z-index: 1;
   }
   
-.hero .heros-content ul {
-    width: 700px;
+.hero .heros-contact ul {
+    width: 450px;
     height: 80px;
-    top: 100%;
-    margin-left: 200px;
+    right: 100%;
     padding: 30px;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.034);
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
-    border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     align-items:center;
     z-index: 0;
+    margin-top: 150px;
+    left: 50%;
+    transform: translateX(-60%);
 }
 
-.hero .heros-content ul li a {
+.hero .heros-contact ul li a {
     height: 50px;
     width: 50px;
     text-align: center;
+    margin-right: 20px;
     color: var(--theme-white);
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
@@ -344,7 +363,7 @@ header ul li:last-child a::before{
 
 }
 
-.hero .heros-content ul li a i{
+.hero .heros-contact ul li a i{
     height: 50px;
     width: 50px;
     display: flex;
@@ -352,7 +371,7 @@ header ul li:last-child a::before{
     justify-content: center;
 }
 
-.hero .heros-content ul li a:hover {
+.hero .heros-contact ul li a:hover {
     width: 130px;
 }
 
@@ -366,6 +385,9 @@ header ul li:last-child a::before{
 .about{
     background-color:var(--theme-dark);
     height: 750px;
+}
+.about-content{
+    height: 850px;
 }
 
 
